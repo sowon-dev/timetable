@@ -1,5 +1,5 @@
 # TO DO LIST TOGETHER
-- DB테이블과 컬럼짜기
+1. DB테이블과 컬럼짜기
 
 # TO DO LIST FOR 신혜
 1. 자바빈생성
