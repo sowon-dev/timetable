@@ -11,11 +11,10 @@
 <body>
 <%
   request.setCharacterEncoding("UTF-8");
-  tableDAO tdao = new tableDAO();
-
-  
+/*   tableDAO tdao = new tableDAO(); */
 %>
 
-<table></table>
+안녕
+
 </body>
 </html>
