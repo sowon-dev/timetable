@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>JSP7</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+	<!-- 에러 코드별 데이터처리 : 배포시에 꼭 필요한 페이지-->
+	<!--1. 만약 404에러가 뜨면 location 아래로 이동해서 처리하겠다는 의미 
+	webcontent하위에 error폴더 생성 후 그 안에 404code.jsp생성 -->
+	
+<!-- 	<error-page>
+		<error-code>404</error-code>
+		<location>
+		 	/error/404code.jsp
+		</location>
+	</error-page> 
+	
+	2. 만약 500에러가 뜨면 location 아래로 이동해서 처리하겠다는 의미 
+	webcontent하위에 error폴더 생성 후 그 안에 500code.jsp생성
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>
+			/error/500code.jsp
+		</location>
+	</error-page> -->
+	
+	
+  <!-- JNDI리소스설정 -->
+  <resource-ref>
+  	<description>ConnectDB</description> 
+  	<res-ref-name>jdbc/mysqlDB</res-ref-name>
+  	<res-type>javax.sql.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
+  
+</web-app>
+

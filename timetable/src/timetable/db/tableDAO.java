@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import timetable.Tablebean;
 
@@ -54,8 +55,8 @@ public class tableDAO {
 		}
 		
 		//테이블에 데이터뿌려주는 메서드
-		public Tablebean getData(){
-			Tablebean tb = null;
+		public ArrayList getData(){
+			ArrayList tblist = new ArrayList();
 		
 			try {
 				con= getCon();
@@ -63,13 +64,14 @@ public class tableDAO {
 				pstmt = con.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				
-				if(rs.next()){
-					tb = new Tablebean();
+				while(rs.next()){
+					Tablebean tb = new Tablebean();
 					tb.setMon_dd(rs.getDate("mon_dd"));
 					tb.setSubam(rs.getString("subam"));
 					tb.setSubpm(rs.getString("subpm"));
 					tb.setWeekday(rs.getString("weekday"));
 					System.out.println(tb);
+					tblist.add(tb);
 				}
 			} catch (SQLException e) {
 				System.out.println("sql 오류");
@@ -77,7 +79,7 @@ public class tableDAO {
 			} finally {
 				closeDB();
 			}
-			return tb;	
+			return tblist;	
 		}
 		
 }
