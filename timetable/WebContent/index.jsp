@@ -21,16 +21,16 @@
 	  Tablebean tb = (Tablebean) tblist.get(i);
 %>
 	<tr>
-    <th></th>
-		<th><%=tb.getMon_dd()%>  <%=tb.getWeekday()%></th>
+		<th></th>
+		<th> <%=tb.getMon_dd()%>  <%=tb.getWeekday()%> </th>
 	</tr>
 	<tr>
-		<th>오전</th>
-	    <td><%=tb.getSubam()%></td>
-	</tr>
-	<tr>
-		<th>오후</th>
-	    <td><%=tb.getSubpm()%></td>
+		<th> 오전 </th>
+	    <td> <%=tb.getSubam()%> </td>
+	 </tr>
+	 <tr>
+	 	<th> 오후 </th>
+	    <td> <%=tb.getSubpm()%> </td>
 	</tr>
 <%
 }
