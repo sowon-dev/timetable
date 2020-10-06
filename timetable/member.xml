@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD -->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- bean == 객체(스프링이 제공하는 객체) -->
+<beans>
+	<!-- Controller_Action 객체생성-->
+	<bean id="action" class="com.itwill.member.SelectMemberAction">
+	<!-- 파라미터가 없으므로 bean태그만 생성  -->
+		<!-- 생성자활용한 의존주입   -->
+		<property name="mdao2" ref="mdao1"></property>
+	</bean>
+	<!-- DAO 객체생성-->
+	<bean id="mdao1" class="com.itwill.member.db.MemberDAOImpl">
+	<!-- 파라미터가 없으므로 bean태그만 생성  -->
+	</bean>
+
+</beans>
